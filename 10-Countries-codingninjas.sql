@@ -1,13 +1,15 @@
-//Big Countries
 
 
-//create Cinema table
-CREATE TABLE World (
-    name varchar2(10) NOT NULL,
-    continent varchar2(10),
-    area varchar2(10),
-    population varchar2(10),
-    gdp varchar2(10)
-);
+-- create a table
+Create table If Not Exists World (name varchar(255), continent varchar(255), area numeric, population numeric, gdp numeric);
 
-select * from Cinema 
+
+
+-- insert some values
+insert into World (name, continent, area, population, gdp) values ('Afghanistan', 'Asia', '652230', '25500100', '20343000000');
+insert into World (name, continent, area, population, gdp) values ('Albania', 'Europe', '28748', '2831741', '12960000000');
+insert into World (name, continent, area, population, gdp) values ('Algeria', 'Africa', '2381741', '37100000', '188681000000');
+insert into World (name, continent, area, population, gdp) values ('Andorra', 'Europe', '468', '78115', '3712000000');
+insert into World (name, continent, area, population, gdp) values ('Angola', 'Africa', '1246700', '20609294', '100990000000');
+
+select  w.name, w.population, w.area from World w where w.area>3000000 or w.population>25000000
